@@ -1,0 +1,126 @@
+ uname
+====================
+Linux
+
+####################################################################################################
+
+uptime
+====================
+ 14:08:01 up  4:29,  1 user,  load average: 0.56, 0.16, 0.05
+
+####################################################################################################
+
+df -kh
+====================
+Filesystem           Size  Used Avail Use% Mounted on
+devtmpfs             880M     0  880M   0% /dev
+tmpfs                909M     0  909M   0% /dev/shm
+tmpfs                909M  9.3M  900M   2% /run
+tmpfs                909M     0  909M   0% /sys/fs/cgroup
+/dev/mapper/cl-root  8.0G  4.7G  3.4G  59% /
+/dev/sda1           1014M  242M  773M  24% /boot
+tmpfs                182M  3.5M  179M   2% /run/user/1000
+/dev/sr0              59M   59M     0 100% /run/media/ashu/VBox_GAs_6.1.22
+tmpfs                182M     0  182M   0% /run/user/0
+
+####################################################################################################
+
+cat /etc/redhat-release
+====================
+CentOS Linux release 8.4.2105
+
+####################################################################################################
+
+fdisk -l
+====================
+Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xa9c1b951
+
+Device     Boot   Start      End  Sectors Size Id Type
+/dev/sda1  *       2048  2099199  2097152   1G 83 Linux
+/dev/sda2       2099200 20971519 18872320   9G 8e Linux LVM
+
+
+Disk /dev/mapper/cl-root: 8 GiB, 8585740288 bytes, 16769024 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-swap: 1 GiB, 1073741824 bytes, 2097152 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+####################################################################################################
+
+ifconfig -a
+====================
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.106  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::a00:27ff:fe82:5c7d  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:82:5c:7d  txqueuelen 1000  (Ethernet)
+        RX packets 27902  bytes 22950948 (21.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4852  bytes 383964 (374.9 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.56.101  netmask 255.255.255.0  broadcast 192.168.56.255
+        inet6 fe80::a00:27ff:fef7:a8e7  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:f7:a8:e7  txqueuelen 1000  (Ethernet)
+        RX packets 2622  bytes 435855 (425.6 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1932  bytes 389723 (380.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 7  bytes 1236 (1.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7  bytes 1236 (1.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:4b:d8:bd  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0-nic: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 52:54:00:4b:d8:bd  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+####################################################################################################
+
+cat /etc/fstab
+====================
+
+#
+# /etc/fstab
+# Created by anaconda on Tue Jul 27 03:42:32 2021
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/cl-root     /                       xfs     defaults        0 0
+UUID=7ee5a094-0e09-4d02-bef5-1e507af48a03 /boot                   xfs     defaults        0 0
+/dev/mapper/cl-swap     none                    swap    defaults        0 0
+
+####################################################################################################
+

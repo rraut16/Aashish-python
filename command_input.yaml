@@ -1,0 +1,8 @@
+COMMANDS: 
+  - uname
+  - uptime 
+  - df -kh 
+  - cat /etc/redhat-release
+  - fdisk -l
+  - ifconfig -a
+  - cat /etc/fstab
